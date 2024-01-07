@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Close Nav
   closeNavButton.addEventListener('click', function() {
+    console.log("Clicked close button")
     app.setAttribute("aria-hidden", "true")
     app.setAttribute("inert", "")
   });
