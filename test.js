@@ -1,7 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
+  const closeNavButton = document.getElementById('navClose');
   const openModalButton = document.getElementById('openModalButton');
   const closeModalButton = document.getElementById('closeModalButton');
   const modal = document.getElementById('myModal');
+  const app = document.getElementById('app');
+
+  // Close Nav
+  closeNavButton.addEventListener('click', function() {
+    app.setAttribute("aria-hidden", "true")
+    app.setAttribute("inert", "")
+  });
 
   // Show the modal
   openModalButton.addEventListener('click', function() {
