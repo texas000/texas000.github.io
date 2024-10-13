@@ -28,9 +28,6 @@
   <!-- Input for text -->
   <input type="text" id="textInput" placeholder="Type something..." style="width: 300px;">
   
-  <!-- Button to draw the text on canvas -->
-  <button onclick="drawTextOnCanvas()">Draw Text on Image</button>
-  
   <!-- Button to export the canvas as an image -->
   <button onclick="exportToImage()">Export as Image</button>
   
@@ -38,10 +35,11 @@
   <canvas id="canvas" width="400" height="200"></canvas>
 
   <script>
+    const canvas = document.getElementById('canvas');
+    const context = canvas.getContext('2d');
+
     // Function to draw the input text on the canvas
     function drawTextOnCanvas() {
-      const canvas = document.getElementById('canvas');
-      const context = canvas.getContext('2d');
       const textInput = document.getElementById('textInput').value;
 
       // Clear the canvas before drawing new text
@@ -53,13 +51,16 @@
       context.textAlign = 'center';
       context.textBaseline = 'middle';
 
+      // Fix for spaces: Using `fillText` with `trim()` ensures leading/trailing spaces are handled
       // Draw the text in the center of the canvas
-      context.fillText(textInput, canvas.width / 2, canvas.height / 2);
+      context.fillText(textInput.trim(), canvas.width / 2, canvas.height / 2);
     }
+
+    // Listen for input changes to update the canvas in real-time
+    document.getElementById('textInput').addEventListener('input', drawTextOnCanvas);
 
     // Function to export the canvas content as an image
     function exportToImage() {
-      const canvas = document.getElementById('canvas');
       const imageUrl = canvas.toDataURL('image/png'); // Convert canvas to PNG image URL
 
       // Create a link to download the image
@@ -68,6 +69,9 @@
       link.download = 'text-image.png';  // File name for download
       link.click();  // Trigger the download
     }
+
+    // Initial call to draw the canvas with empty input
+    drawTextOnCanvas();
   </script>
 </body>
 </html>
