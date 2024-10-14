@@ -12,6 +12,9 @@
       padding: 20px;
     }
     canvas {
+      display: none; /* Hide the canvas */
+    }
+    img {
       border: 1px solid black;
       margin-top: 20px;
     }
@@ -28,17 +31,21 @@
   <!-- Input for text -->
   <input type="text" id="textInput" placeholder="Type something..." style="width: 300px;">
   
-  <!-- Button to export the canvas as an image -->
+  <!-- Button to export the image -->
   <button onclick="exportToImage()">Export as Image</button>
   
-  <!-- Canvas element for drawing the text -->
+  <!-- Hidden canvas for drawing the text -->
   <canvas id="canvas" width="400" height="200"></canvas>
+
+  <!-- Image element to display the generated image -->
+  <img id="textImage" src="" alt="Generated Image">
 
   <script>
     const canvas = document.getElementById('canvas');
     const context = canvas.getContext('2d');
+    const imgElement = document.getElementById('textImage');
 
-    // Function to draw the input text on the canvas
+    // Function to draw the input text on the canvas and update the image
     function drawTextOnCanvas() {
       const textInput = document.getElementById('textInput').value;
 
@@ -51,26 +58,26 @@
       context.textAlign = 'center';
       context.textBaseline = 'middle';
 
-      // Fix for spaces: Using `fillText` with `trim()` ensures leading/trailing spaces are handled
       // Draw the text in the center of the canvas
       context.fillText(textInput.trim(), canvas.width / 2, canvas.height / 2);
+
+      // Convert the canvas to an image (data URL) and set it as the source of the img element
+      const dataUrl = canvas.toDataURL('image/png');
+      imgElement.src = dataUrl;
     }
 
-    // Listen for input changes to update the canvas in real-time
+    // Listen for input changes to update the canvas and image in real-time
     document.getElementById('textInput').addEventListener('input', drawTextOnCanvas);
 
-    // Function to export the canvas content as an image
+    // Function to export the image (will trigger image download on supported browsers)
     function exportToImage() {
-      const imageUrl = canvas.toDataURL('image/png'); // Convert canvas to PNG image URL
-
-      // Create a link to download the image
       const link = document.createElement('a');
-      link.href = imageUrl;
-      link.download = 'text-image.png';  // File name for download
+      link.href = imgElement.src;
+      link.download = 'text-image.png';
       link.click();  // Trigger the download
     }
 
-    // Initial call to draw the canvas with empty input
+    // Initial call to draw the canvas and update the image with empty input
     drawTextOnCanvas();
   </script>
 </body>
