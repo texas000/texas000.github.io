@@ -14,7 +14,7 @@
       box-sizing: border-box;
     }
     canvas {
-      display: none; /* Hide the canvas but use it for drawing */
+      display: none; /* Keep the canvas hidden but use it for drawing */
     }
     #generatedImage {
       border: 1px solid black;
@@ -62,10 +62,14 @@
   <!-- Image element for showing the generated image -->
   <img id="generatedImage" src="" alt="Generated Image">
 
+  <!-- Download link for saving the image -->
+  <!-- <a id="downloadLink" style="display:none;">Download Image</a> -->
+
   <script>
     const canvas = document.getElementById('canvas');
     const context = canvas.getContext('2d');
     const imgElement = document.getElementById('generatedImage');
+    const downloadLink = document.getElementById('downloadLink');
 
     // Function to draw the input text on the canvas and update the image
     function drawTextOnCanvas() {
@@ -83,21 +87,31 @@
       // Draw the text in the center of the canvas
       context.fillText(textInput.trim(), canvas.width / 2, canvas.height / 2);
 
-      // Convert the canvas to an image and display it
-      const imageUrl = canvas.toDataURL('image/png');
-      imgElement.src = imageUrl;
+      // Create a Blob from the canvas content and display it in the img element
+      canvas.toBlob(function(blob) {
+        const url = URL.createObjectURL(blob);
+        imgElement.src = url;
+
+        // Make the image downloadable with the correct format
+        downloadLink.href = url;
+        downloadLink.download = 'text-image.png';
+        downloadLink.style.display = 'inline';
+        downloadLink.textContent = 'Download Image';
+      });
     }
 
     // Listen for input changes to update the canvas and image in real-time
     document.getElementById('textInput').addEventListener('input', drawTextOnCanvas);
 
-    // Function to export the image (allowing it to be downloadable or interactable)
+    // Function to export the image in a proper format, not base64
     function exportToImage() {
-      const imageUrl = canvas.toDataURL('image/png');
-      const link = document.createElement('a');
-      link.href = imageUrl;
-      link.download = 'text-image.png';
-      link.click();  // Trigger the download
+      canvas.toBlob(function(blob) {
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'text-image.png';  // Set the proper file name and extension
+        link.click();  // Trigger the download
+      });
     }
 
     // Initial call to draw the canvas with empty input
