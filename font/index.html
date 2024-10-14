@@ -10,18 +10,38 @@
       font-family: 'Black Han Sans', sans-serif;
       text-align: center;
       padding: 20px;
+      margin: 0;
+      box-sizing: border-box;
     }
     canvas {
-      display: none; /* Hide the canvas */
-    }
-    img {
       border: 1px solid black;
       margin-top: 20px;
+      width: 100%;  /* Ensure the canvas fits the screen width */
+      max-width: 400px;
+      height: auto;
     }
-    input, button {
+    input {
       font-size: 16px;
-      padding: 8px;
+      padding: 10px;
+      margin: 10px 0;
+      width: 80%;  /* Make the input take up most of the screen width */
+      max-width: 400px;  /* Limit max width for larger screens */
+    }
+    button {
+      font-size: 16px;
+      padding: 10px;
       margin: 10px;
+      width: 80%;
+      max-width: 300px;
+      cursor: pointer;
+    }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 24px;  /* Make the title smaller on mobile */
+      }
+      input, button {
+        font-size: 14px;  /* Adjust input and button size for mobile */
+      }
     }
   </style>
 </head>
@@ -29,21 +49,17 @@
   <h1>Text to Image Generator</h1>
   
   <!-- Input for text -->
-  <input type="text" id="textInput" placeholder="Type something..." style="width: 300px;">
+  <input type="text" id="textInput" placeholder="Type something...">
   
   <!-- Button to export the image -->
   <button onclick="exportToImage()">Export as Image</button>
   
-  <!-- Hidden canvas for drawing the text -->
+  <!-- Canvas element for drawing the text -->
   <canvas id="canvas" width="400" height="200"></canvas>
-
-  <!-- Image element to display the generated image -->
-  <img id="textImage" src="" alt="Generated Image">
 
   <script>
     const canvas = document.getElementById('canvas');
     const context = canvas.getContext('2d');
-    const imgElement = document.getElementById('textImage');
 
     // Function to draw the input text on the canvas and update the image
     function drawTextOnCanvas() {
@@ -60,24 +76,23 @@
 
       // Draw the text in the center of the canvas
       context.fillText(textInput.trim(), canvas.width / 2, canvas.height / 2);
-
-      // Convert the canvas to an image (data URL) and set it as the source of the img element
-      const dataUrl = canvas.toDataURL('image/png');
-      imgElement.src = dataUrl;
     }
 
-    // Listen for input changes to update the canvas and image in real-time
+    // Listen for input changes to update the canvas in real-time
     document.getElementById('textInput').addEventListener('input', drawTextOnCanvas);
 
-    // Function to export the image (will trigger image download on supported browsers)
+    // Function to export the canvas content as an image
     function exportToImage() {
+      const imageUrl = canvas.toDataURL('image/png'); // Convert canvas to PNG image URL
+
+      // Create a link to download the image
       const link = document.createElement('a');
-      link.href = imgElement.src;
-      link.download = 'text-image.png';
+      link.href = imageUrl;
+      link.download = 'text-image.png';  // File name for download
       link.click();  // Trigger the download
     }
 
-    // Initial call to draw the canvas and update the image with empty input
+    // Initial call to draw the canvas with empty input
     drawTextOnCanvas();
   </script>
 </body>
