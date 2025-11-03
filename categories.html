@@ -1,0 +1,22 @@
+---
+layout: default
+title: "Posts by Category"
+---
+
+<div class="space-y-12">
+  {% assign categories = site.categories | sort %}
+  {% for category in categories %}
+    {% assign cat_name = category | first %}
+    <section id="{{ cat_name | slugify }}">
+      <h2 class="text-3xl font-bold text-sky-300 mb-6 capitalize border-b-2 border-slate-700 pb-3">{{ cat_name }}</h2>
+      <ul class="space-y-4">
+        {% for post in site.categories[cat_name] %}
+          <li>
+            <a href="{{ post.url | relative_url }}" class="text-xl text-slate-100 hover:text-white transition-colors">{{ post.title }}</a>
+            <p class="text-sm text-slate-400 mt-1">{{ post.date | date: "%B %d, %Y" }}</p>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endfor %}
+</div>

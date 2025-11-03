@@ -18,6 +18,19 @@
     </div>
   </header>
 
+  <nav class="bg-gray-800/50 backdrop-blur-sm sticky top-0 z-10">
+    <div class="mx-auto max-w-3xl px-4">
+      <div class="flex items-center justify-center space-x-4 h-12">
+        <a href="/" class="text-slate-200 hover:text-sky-300 transition-colors px-3 py-2 rounded-md text-sm font-medium">Home</a>
+        {% assign categories = site.categories | sort %}
+        {% for category in categories %}
+          {% assign cat_name = category | first %}
+          <a href="/categories/#{{ cat_name | slugify }}" class="text-slate-200 hover:text-sky-300 transition-colors px-3 py-2 rounded-md text-sm font-medium capitalize">{{ cat_name }}</a>
+        {% endfor %}
+      </div>
+    </div>
+  </nav>
+
   <main class="p-4">
     <div class="mx-auto max-w-3xl">
       {{ content }}
