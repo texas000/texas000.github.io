@@ -1105,6 +1105,10 @@ video {
   display: block;
 }
 
+.table {
+  display: table;
+}
+
 .max-w-3xl {
   max-width: 48rem;
 }
