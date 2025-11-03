@@ -2,19 +2,16 @@
 layout: default
 title: Home
 ---
-
-<div class="home">
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <h2>
-          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        </h2>
-        <p class="post-meta">{{ post.date | date: "%B %d, %Y" }}</p>
-        <div class="post-excerpt">
+<div class="space-y-6">
+  {% for post in site.posts %}
+    <div class="bg-slate-800/50 backdrop-blur-lg rounded-2xl border border-slate-700 p-6 transition-all duration-300 hover:bg-slate-800/70 hover:border-slate-600">
+      <a href="{{ post.url | relative_url }}" class="block">
+        <h2 class="text-2xl font-bold text-sky-300">{{ post.title }}</h2>
+        <p class="text-sm text-slate-400 mt-1">{{ post.date | date: "%B %d, %Y" }}</p>
+        <div class="text-slate-300 mt-4">
           {{ post.excerpt }}
         </div>
-      </li>
-    {% endfor %}
-  </ul>
+      </a>
+    </div>
+  {% endfor %}
 </div>

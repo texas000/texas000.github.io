@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title:  "Welcome to My New Blog!"
 date:   2025-11-03 10:00:00 -0500
 categories: jekyll update

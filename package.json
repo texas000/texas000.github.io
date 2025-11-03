@@ -1,0 +1,22 @@
+{
+  "name": "texas000.github.io",
+  "version": "1.0.0",
+  "description": "This Repositories is for testing. Please visit my personal website.",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/main.css",
+    "watch:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/main.css --watch",
+    "serve": "concurrently \"npm:watch:css\" \"bundle exec jekyll serve\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.19",
+    "autoprefixer": "^10.4.21",
+    "concurrently": "^9.2.1",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.18"
+  }
+}
