@@ -2,16 +2,261 @@
 layout: default
 title: Home
 ---
-<div class="space-y-6">
-  {% for post in site.posts %}
-    <div class="bg-slate-800/50 backdrop-blur-lg rounded-2xl border border-slate-700 p-6 transition-all duration-300 hover:bg-slate-800/70 hover:border-slate-600">
-      <a href="{{ post.url | relative_url }}" class="block">
-        <h2 class="text-2xl font-bold text-sky-300">{{ post.title }}</h2>
-        <p class="text-sm text-slate-400 mt-1">{{ post.date | date: "%B %d, %Y" }}</p>
-        <div class="text-slate-300 mt-4">
-          {{ post.excerpt }}
-        </div>
-      </a>
+
+<!-- Hero Section -->
+<section id="home" class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto w-full">
+    <div class="text-center animate-fade-in">
+      <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6">
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary-400 via-primary-500 to-primary-600">
+          Ryan
+        </span>
+      </h1>
+      <p class="text-2xl sm:text-3xl md:text-4xl text-dark-300 mb-4">Full Stack Developer</p>
+      <p class="text-lg sm:text-xl text-dark-400 max-w-2xl mx-auto mb-8">
+        실험적이고 프로젝트 중심의 개발자. 새로운 기술을 배우고 적용하는 것을 좋아합니다.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="#contact" class="px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-semibold transition-all hover:shadow-neon">
+          Contact Me
+        </a>
+        <a href="#projects" class="px-8 py-3 bg-dark-800 hover:bg-dark-700 text-white rounded-lg font-semibold transition-all border border-dark-700 hover:border-primary-600">
+          View Projects
+        </a>
+      </div>
     </div>
-  {% endfor %}
-</div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-20 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="section-title">About Me</h2>
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6">
+        <div class="bg-dark-900/50 backdrop-blur-lg rounded-2xl border border-dark-800 p-8">
+          <h3 class="text-2xl font-bold text-primary-400 mb-4">👋 안녕하세요!</h3>
+          <p class="text-dark-300 leading-relaxed mb-4">
+            저는 풀스택 개발자로, 사용자 경험을 중시하며 깔끔하고 효율적인 코드를 작성하는 것을 추구합니다.
+          </p>
+          <p class="text-dark-300 leading-relaxed mb-4">
+            새로운 기술을 배우고 실험하는 것을 즐기며, 문제 해결을 위한 창의적인 접근을 좋아합니다.
+          </p>
+          <p class="text-dark-300 leading-relaxed">
+            오픈소스 프로젝트에 기여하고, 지속적인 학습과 성장을 추구합니다.
+          </p>
+        </div>
+      </div>
+      <div class="space-y-4">
+        <div class="stat-card">
+          <div class="stat-number">5+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">50+</div>
+          <div class="stat-label">Projects Completed</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100+</div>
+          <div class="stat-label">GitHub Contributions</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 bg-dark-900/30">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="section-title">Skills & Technologies</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="skill-card">
+        <div class="skill-icon">💻</div>
+        <h3 class="skill-title">Frontend</h3>
+        <ul class="skill-list">
+          <li>React / Next.js</li>
+          <li>Vue.js / Nuxt.js</li>
+          <li>TypeScript / JavaScript</li>
+          <li>Tailwind CSS</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">⚙️</div>
+        <h3 class="skill-title">Backend</h3>
+        <ul class="skill-list">
+          <li>Node.js / Express</li>
+          <li>Python / FastAPI</li>
+          <li>Ruby / Rails</li>
+          <li>PostgreSQL / MongoDB</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">☁️</div>
+        <h3 class="skill-title">DevOps</h3>
+        <ul class="skill-list">
+          <li>Docker / Kubernetes</li>
+          <li>AWS / GCP</li>
+          <li>CI/CD</li>
+          <li>Linux / Shell</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">📱</div>
+        <h3 class="skill-title">Mobile</h3>
+        <ul class="skill-list">
+          <li>React Native</li>
+          <li>Flutter</li>
+          <li>iOS / Swift</li>
+          <li>Android / Kotlin</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🛠️</div>
+        <h3 class="skill-title">Tools</h3>
+        <ul class="skill-list">
+          <li>Git / GitHub</li>
+          <li>VS Code</li>
+          <li>Figma</li>
+          <li>Postman</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🎨</div>
+        <h3 class="skill-title">Design</h3>
+        <ul class="skill-list">
+          <li>UI/UX Design</li>
+          <li>Responsive Design</li>
+          <li>Wireframing</li>
+          <li>Prototyping</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Experience Section -->
+<section id="experience" class="py-20 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="section-title">Work Experience</h2>
+    <div class="space-y-8">
+      <div class="experience-card">
+        <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+          <div>
+            <h3 class="text-2xl font-bold text-primary-400">Senior Full Stack Developer</h3>
+            <p class="text-xl text-dark-300 mt-1">Tech Company</p>
+          </div>
+          <span class="text-dark-400 mt-2 md:mt-0">2021 - Present</span>
+        </div>
+        <ul class="space-y-2 text-dark-300">
+          <li class="flex items-start">
+            <span class="text-primary-500 mr-2">▸</span>
+            <span>웹 애플리케이션 개발 및 유지보수</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-primary-500 mr-2">▸</span>
+            <span>React와 Node.js를 활용한 풀스택 개발</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-primary-500 mr-2">▸</span>
+            <span>팀 리딩 및 코드 리뷰</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="experience-card">
+        <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+          <div>
+            <h3 class="text-2xl font-bold text-primary-400">Full Stack Developer</h3>
+            <p class="text-xl text-dark-300 mt-1">Startup Company</p>
+          </div>
+          <span class="text-dark-400 mt-2 md:mt-0">2019 - 2021</span>
+        </div>
+        <ul class="space-y-2 text-dark-300">
+          <li class="flex items-start">
+            <span class="text-primary-500 mr-2">▸</span>
+            <span>React와 Node.js를 활용한 풀스택 개발</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-primary-500 mr-2">▸</span>
+            <span>RESTful API 설계 및 구현 C#</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-primary-500 mr-2">▸</span>
+            <span>데이터베이스 최적화 및 성능 개선</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-primary-500 mr-2">▸</span>
+            <span>AWS 인프라 구축 및 관리</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 bg-dark-900/30">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for post in site.posts limit:6 %}
+      <div class="project-card group">
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-primary-400 group-hover:text-primary-300 transition-colors mb-2">
+            {{ post.title }}
+          </h3>
+          <p class="text-sm text-dark-400 mb-4">{{ post.date | date: "%B %d, %Y" }}</p>
+          <div class="text-dark-300 line-clamp-3">
+            {{ post.excerpt | strip_html | truncate: 120 }}
+          </div>
+        </div>
+        <div class="px-6 pb-6">
+          <a href="{{ post.url | relative_url }}" class="inline-flex items-center text-primary-400 hover:text-primary-300 transition-colors">
+            Read more
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="bg-dark-900/50 backdrop-blur-lg rounded-2xl border border-dark-800 p-8 md:p-12">
+      <p class="text-xl text-dark-300 text-center mb-8">
+        새로운 프로젝트나 협업 기회에 관심이 있으시다면 언제든 연락주세요!
+      </p>
+      <div class="grid sm:grid-cols-2 gap-6 mb-8">
+        <div class="contact-item">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          <div>
+            <div class="text-dark-400 text-sm">Email</div>
+            <a href="mailto:texas000@hotmail.com" class="text-primary-400 hover:text-primary-300">texas000@hotmail.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+          </svg>
+          <div>
+            <div class="text-dark-400 text-sm">GitHub</div>
+            <a href="https://github.com/texas000" target="_blank" class="text-primary-400 hover:text-primary-300">@texas000</a>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center">
+        <a href="mailto:texas000@hotmail.com" class="px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-semibold transition-all hover:shadow-neon">
+          Send Message
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

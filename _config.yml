@@ -1,2 +1,21 @@
-title: Ryan’s Lab
-description: 실험적이고 프로젝트 중심의 개발자 블로그
+title: Ryan's Lab
+description: Full Stack Developer | 실험적이고 프로젝트 중심의 개발자
+url: "https://texas000.github.io/"
+email: texas000@hotmail.com
+github_username: texas000
+
+# Build settings
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - package.json
+  - package-lock.json
+  - tailwind.config.js
+  - postcss.config.js
+  - README.md

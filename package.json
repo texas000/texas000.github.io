@@ -4,9 +4,11 @@
   "description": "This Repositories is for testing. Please visit my personal website.",
   "main": "index.js",
   "scripts": {
-    "build:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/main.css",
+    "build:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/main.css --minify",
     "watch:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/main.css --watch",
+    "build": "npm run build:css && bundle exec jekyll build",
     "serve": "concurrently \"npm:watch:css\" \"bundle exec jekyll serve\"",
+    "dev": "npm run serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

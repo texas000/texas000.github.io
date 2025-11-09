@@ -1,41 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }} | {{ site.title }}</title>
   <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Momo+Trust+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   {% if jekyll.environment == 'production' %}
     {% include google-analytics.html %}
   {% endif %}
 </head>
-<body class="bg-gradient-to-br from-slate-900 to-gray-800 text-white font-sans antialiased">
+<body class="bg-gradient-to-br from-dark-950 via-dark-900 to-dark-950 text-dark-100 font-sans antialiased">
 
-  <header class="p-4 text-center">
-    <div class="mx-auto max-w-3xl">
-      <h1 class="text-4xl font-bold"><a href="/" class="hover:text-sky-300 transition-colors">{{ site.title }}</a></h1>
-      <p class="text-slate-300">{{ site.description }}</p>
-    </div>
-  </header>
+  {% include navigation.html %}
 
-  <nav class="bg-gray-800/50 backdrop-blur-sm sticky top-0 z-10">
-    <div class="mx-auto max-w-3xl px-4">
-      <div class="flex items-center justify-center space-x-4 h-12">
-        <a href="/" class="text-slate-200 hover:text-sky-300 transition-colors px-3 py-2 rounded-md text-sm font-medium">Home</a>
-        {% assign categories = site.categories | sort %}
-        {% for category in categories %}
-          {% assign cat_name = category | first %}
-          <a href="/categories/#{{ cat_name | slugify }}" class="text-slate-200 hover:text-sky-300 transition-colors px-3 py-2 rounded-md text-sm font-medium capitalize">{{ cat_name }}</a>
-        {% endfor %}
+  <main class="pt-16">
+    {{ content }}
+  </main>
+
+  <footer class="bg-dark-950 border-t border-dark-800 py-8 mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center text-dark-400">
+        <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
+        <p class="mt-2 text-sm">Built with Jekyll & Tailwind CSS</p>
       </div>
     </div>
-  </nav>
-
-  <main class="p-4">
-    <div class="mx-auto max-w-3xl">
-      {{ content }}
-    </div>
-  </main>
+  </footer>
 
 </body>
 </html>
