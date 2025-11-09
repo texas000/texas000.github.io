@@ -1,12 +1,54 @@
 title: Ryan's Lab
 description: Full Stack Developer | 실험적이고 프로젝트 중심의 개발자
-url: "https://texas000.github.io/"
+url: "https://texas000.github.io"
+baseurl: ""
 email: texas000@hotmail.com
 github_username: texas000
+
+# SEO Settings
+author:
+  name: Ryan
+  email: texas000@hotmail.com
+  twitter: yourusername
+
+# Social profiles
+twitter:
+  username: yourusername
+  card: summary_large_image
+
+social:
+  name: Ryan
+  links:
+    - https://github.com/texas000
+
+# Default image for social sharing
+og_image: /assets/images/og-image.png
+
+# Language
+lang: ko_KR
 
 # Build settings
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Feed settings
+feed:
+  path: feed.xml
+
+# Sitemap settings
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      seo:
+        type: BlogPosting
 
 # Exclude from processing
 exclude:

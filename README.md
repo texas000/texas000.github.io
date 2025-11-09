@@ -88,8 +88,63 @@ colors: {
 
 ### Custom Components
 
-The site includes reusable component styles in `index.html`:
+The site includes reusable component styles in `assets/css/input.css`:
 - `.section-title` - Section headings
 - `.skill-card` - Skill display cards
 - `.experience-card` - Experience timeline cards
 - `.project-card` - Project showcase cards
+- `.nav-link` - Navigation links with active state
+- `.mobile-nav-link` - Mobile menu items
+
+## SEO Optimization
+
+This site is fully optimized for search engines:
+
+### Features
+
+- **robots.txt**: Allows all search engine bots to crawl the site
+- **sitemap.xml**: Automatically generated via `jekyll-sitemap` plugin
+- **RSS Feed**: Available at `/feed.xml`
+- **Meta Tags**: Comprehensive SEO meta tags including:
+  - Open Graph (Facebook, LinkedIn)
+  - Twitter Cards
+  - Canonical URLs
+  - Structured Data (JSON-LD)
+
+### How to Add SEO to Blog Posts
+
+Add these fields to your post's front matter:
+
+```yaml
+---
+layout: post
+title: "Your Post Title"
+date: 2025-11-03 11:00:00 -0500
+categories: [category1, category2]
+tags: [tag1, tag2, tag3]
+author: Your Name
+excerpt: "A brief description of your post (160 characters or less)"
+image: /assets/images/post-image.png
+reading_time: 5분
+---
+```
+
+### SEO Best Practices
+
+1. **Title**: Keep it under 60 characters
+2. **Excerpt**: Write compelling descriptions under 160 characters
+3. **Tags**: Use relevant, searchable keywords
+4. **Images**: Always include an og:image for social sharing
+5. **URLs**: Use descriptive, keyword-rich URLs
+
+### Check Your SEO
+
+- **Sitemap**: Visit `https://texas000.github.io/sitemap.xml`
+- **RSS Feed**: Visit `https://texas000.github.io/feed.xml`
+- **Robots**: Visit `https://texas000.github.io/robots.txt`
+
+### Submit to Search Engines
+
+1. **Google Search Console**: Submit your sitemap at `https://search.google.com/search-console`
+2. **Bing Webmaster Tools**: Submit at `https://www.bing.com/webmasters`
+3. **Naver Search Advisor**: Submit at `https://searchadvisor.naver.com`

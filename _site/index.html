@@ -4,11 +4,77 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home | Ryan's Lab</title>
+  
+  <!-- SEO Meta Tags -->
+<meta name="description" content="Full Stack Developer | 실험적이고 프로젝트 중심의 개발자">
+<meta name="keywords" content="Full Stack Developer, Web Development, Programming, Tech Blog">
+<meta name="author" content="Ryan">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="http://localhost:4000/">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://localhost:4000/">
+<meta property="og:title" content="Home | Ryan's Lab">
+<meta property="og:description" content="Full Stack Developer | 실험적이고 프로젝트 중심의 개발자">
+<meta property="og:image" content="http://localhost:4000/assets/images/og-image.png">
+<meta property="og:site_name" content="Ryan's Lab">
+<meta property="og:locale" content="ko_KR">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="http://localhost:4000/">
+<meta name="twitter:title" content="Home | Ryan's Lab">
+<meta name="twitter:description" content="Full Stack Developer | 실험적이고 프로젝트 중심의 개발자">
+<meta name="twitter:image" content="http://localhost:4000/assets/images/og-image.png">
+
+<meta name="twitter:creator" content="@yourusername">
+
+
+<!-- Article specific meta tags -->
+
+
+<!-- Additional SEO meta tags -->
+<meta name="theme-color" content="#0ea5e9">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!-- Structured Data - JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "headline": "Home",
+  "description": "Full Stack Developer | 실험적이고 프로젝트 중심의 개발자",
+  "url": "http://localhost:4000/",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Ryan's Lab",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:4000/assets/images/og-image.png"
+    }
+  },
+  "image": "http://localhost:4000/assets/images/og-image.png",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:4000/"
+  }
+}
+</script>
+
+  
   <link rel="stylesheet" href="/assets/css/main.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Momo+Trust+Display&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- RSS Feed -->
+  <link rel="alternate" type="application/rss+xml" title="Ryan's Lab RSS Feed" href="http://localhost:4000/feed.xml">
+  
   
 </head>
 <body class="bg-gradient-to-br from-dark-950 via-dark-900 to-dark-950 text-dark-100 font-sans antialiased">
@@ -435,13 +501,31 @@
       <div class="project-card group">
         <div class="p-6">
           <h3 class="text-xl font-bold text-primary-400 group-hover:text-primary-300 transition-colors mb-2">
+            똑똑한 AI일수록 해킹에 더 취약하다? - 추론형 AI의 역설적 보안 문제
+          </h3>
+          <p class="text-sm text-dark-400 mb-4">November 08, 2025</p>
+          <div class="text-dark-300 line-clamp-3">
+            최신 연구에 따르면 ChatGPT, Claude, Gemini 같은 고도 추론형 AI 모델이 오히려 해킹에 더 취약하다는 사실이 밝혀졌습니다. 추론 과정이 길어질수록 모델의 안전 신호가 희미해지는 이유를 기술적...
+          </div>
+        </div>
+        <div class="px-6 pb-6">
+          <a href="/blog/2025/11/08/ai-reasoning-security-paradox/" class="inline-flex items-center text-primary-400 hover:text-primary-300 transition-colors">
+            Read more
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <div class="project-card group">
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-primary-400 group-hover:text-primary-300 transition-colors mb-2">
             Jekyll에 대하여
           </h3>
           <p class="text-sm text-dark-400 mb-4">November 03, 2025</p>
           <div class="text-dark-300 line-clamp-3">
-            Jekyll이란 무엇일까요?
-
-
+            Jekyll은 간단하고, 정적이며, 블로그 지향적인 사이트 생성기입니다. GitHub Pages에서 공식 지원하며, 데이터베이스 없이도 빠르고 안전한 웹사이트를 만들 수 있습니다.
           </div>
         </div>
         <div class="px-6 pb-6">

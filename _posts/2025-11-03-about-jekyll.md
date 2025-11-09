@@ -1,8 +1,13 @@
 ---
 layout: post
-title:  "Jekyll에 대하여"
-date:   2025-11-03 11:00:00 -0500
+title: "Jekyll에 대하여"
+date: 2025-11-03 11:00:00 -0500
 categories: jekyll
+tags: [Jekyll, Static Site Generator, Web Development, Ruby]
+author: Ryan
+excerpt: "Jekyll은 간단하고, 정적이며, 블로그 지향적인 사이트 생성기입니다. GitHub Pages에서 공식 지원하며, 데이터베이스 없이도 빠르고 안전한 웹사이트를 만들 수 있습니다."
+image: /assets/images/jekyll-post.png
+reading_time: 5분
 ---
 
 ## Jekyll이란 무엇일까요?

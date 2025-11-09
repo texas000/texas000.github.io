@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>http://localhost:4000/blog/2025/11/02/analyzing-deepcode-repository/</loc>
+<lastmod>2025-11-02T10:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/blog/2025/11/02/fastapi-database-connection-pool/</loc>
+<lastmod>2025-11-02T10:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/blog/2025/11/03/about-browser/</loc>
+<lastmod>2025-11-03T00:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/blog/2025/11/03/jetkyll-default/</loc>
+<lastmod>2025-11-03T00:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/blog/2025/11/03/about-jekyll/</loc>
+<lastmod>2025-11-03T11:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/blog/2025/11/08/ai-reasoning-security-paradox/</loc>
+<lastmod>2025-11-08T21:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/categories/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/</loc>
+</url>
+</urlset>
